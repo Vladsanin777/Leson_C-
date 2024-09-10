@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cmath>
-// Сделать 32 номер
+
 using namespace std;
 
-double part_matr(double a11, double a22, double a33, double a23, double a32){return a11*(a22*a33-a23*a32);}
+double sin_deg(double a){return sin(a*M_PI/180);}
 
 int main(){
-	double a11, a12, a13, a21, a22, a23, a31, a32, a33;
-	cin>>a11>>a12>>a13>>a21>>a22>>a23>>a31>>a32>>a33;
-	cout<<"Трёх уровневая матрица = "<<part_matr(a11, a22, a33, a23, a32)-part_matr(a12, a21, a33, a23, a31)+part_matr(a13, a21, a32, a22, a31)<<endl;
+	double a, A;
+	cin>>a>>A;
+	cout<<"Объём треугольной пирамиды = "<<pow(a, 3)*sqrt(3)/12*sqrt(3*pow(sin_deg(A), 2)/(1-pow(sin_deg(A), 2)))<<endl;
 }
