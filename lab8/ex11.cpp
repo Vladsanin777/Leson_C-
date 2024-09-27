@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+unsigned long long factorial(long long n){long long result = 1; for (unsigned long long i = 2; n>i;i++) {result *= i;} return result;}
+
+int main() {
+    long double x, accuracy = 1e-3, sum = 0.0, term;
+	int n = 1;
+	cin>>x;
+	do{
+		term = pow(-1, n)*(2*n-1)/factorial(2*n)*pow(x, 2*n);
+        sum += term;
+		++n;
+    } while (abs(term) > accuracy);
+    cout << fixed << setprecision(3) << "Сумма ряда: " << sum << endl;
+}
