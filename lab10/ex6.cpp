@@ -8,7 +8,7 @@ class Bisection{
 private:
 	static constexpr long double EPSILON = 1e-5;
 	// Изначальное выражение
-	static long double f(long double x) {return sin(M_PI-2*x)+M_PI/6;}
+	static long double f(long double x) {return pow(M_E, 2*x)-2*pow(x, 2);}
 	// Метод половинного деления Бисекции
 public:
 	static long double bisectionMethod(long double a, long double b) {
@@ -19,5 +19,5 @@ public:
 };
 
 int main() {
-	cout<<fixed<<setprecision(5)<<Bisection::bisectionMethod(0, 1)<<endl;
+	cout<<fixed<<setprecision(5)<<Bisection::bisectionMethod(-3.0, 1.0)<<endl;
 }
